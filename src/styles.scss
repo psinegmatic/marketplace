@@ -133,7 +133,7 @@ section {
 .catalog__item {
 	display: block;
 	height: 250px;
-	background: url('../img/item_2.png') no-repeat;
+	background: url('/assets/images/item_2.png') no-repeat;
 	background-size: cover;
 	cursor: pointer;
 }
@@ -189,7 +189,7 @@ section {
 
 .product-card__section {
 	font-size: 12px;
-	color: #7f7f7f; 
+	color: #7f7f7f;
 }
 
 .product-card__name {
@@ -202,4 +202,8 @@ section {
 
 .product-card__price {
 	font-weight: bold;
+  font-size: 20px;
+  color: white;
 }
+
+
