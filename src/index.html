@@ -18,26 +18,35 @@
             <img src="/assets/images/company-logo.png" alt=""><h2 class="company-logo__title">FINDERS<span>маркетплейс для вашего бизнеса</span></h2 class="company-logo__title">
           </a>
         </div>
-        <div class="col-6 ml-auto">
+        <div class="col-5 ml-auto">
           <div class="user-menu">
             <ul class="user-menu__items">
-              <li class="user-menu__item"><a href="#">Москва</a></li>
-              <li class="user-menu__item"><a href="#">Отложенные</a></li>
-              <li class="user-menu__item"><a href="#">Сравнение</a></li>
+              <li class="user-menu__item"><a href="#"><i class="fa fa-location-arrow" aria-hidden="true"></i> Москва</a></li>
+              <li class="user-menu__item"><a href="#"><i class="fa fa-heart" aria-hidden="true"></i> Отложенные</a></li>
+              <li class="user-menu__item"><a href="#"><i class="fa fa-tasks" aria-hidden="true"></i> Сравнение</a></li>
               <li class="user-menu__item"><a href="#">Вход</a></li>
               <li class="user-menu__item"><a href="#">Регистрация</a></li>
-              <li class="user-menu__item"><a href="#"><div class="busket">Корзина</div></a></li>
+              <li class="user-menu__item"><a href="#"><div class="basket"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Корзина</div></a></li>
             </ul>
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="col-12"><div class="header-search">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed, tempora.</div></div>
+        <div class="col-12">
+          <div class="header-search">
+            <form action="/search">
+              <div class="form-group">
+                <div class="form-group__nav"></div>
+                <input type="text" class="form-group__field">
+                <button type="button" class="header-search__btn form-button">Найти</button>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   </header>
   <main class="main-content">
-    <div class="promo">
       <section class="promo__bunners">
         <div class="container">
           <div class="row">
@@ -89,7 +98,6 @@
             </div>
           </div>
         </div>
-      </section>
     </div>
     <section class="catalog">
       <div class="container">
@@ -99,10 +107,30 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-3"><a href="" class="catalog__item"></a></div>
-          <div class="col-3"><a href="" class="catalog__item"></a></div>
-          <div class="col-3"><a href="" class="catalog__item"></a></div>
-          <div class="col-3"><a href="" class="catalog__item"></a></div>
+          <div class="col-3">
+            <a class="catalog__item  catalog__item--1">
+              <h4 class="catalog-item__header">Телевизоры</h4>
+              <img src="/assets/images/chapter_1.png" alt="" class="catalog__item-image">
+            </a>
+          </div>
+          <div class="col-3">
+            <a class="catalog__item  catalog__item--2">
+              <h4 class="catalog-item__header  catalog-item__header--bottom">Проекторы</h4>
+              <img src="/assets/images/chapter_2.png" alt="" class="catalog__item-image">
+            </a>
+          </div>
+          <div class="col-3">
+            <a class="catalog__item  catalog__item--3">
+              <h4 class="catalog-item__header">Комплекты акустики</h4>
+              <img src="/assets/images/chapter_3.png" alt="" class="catalog__item-image">
+            </a>
+          </div>
+          <div class="col-3">
+            <a class="catalog__item  catalog__item--4">
+              <h4 class="catalog-item__header  catalog-item__header--bottom">Оборудование для видеоконфиренций</h4>
+              <img src="/assets/images/chapter_4.png" alt="" class="catalog__item-image">
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -116,11 +144,12 @@
     <section class="parnters">
       <div class="container">
         <div class="row">
-          <div class="col-6"><a class="parnters__bunner"><img src="/assets/images/ad_2.jpg" alt=""></a></div>
-          <div class="col-6"><a class="parnters__bunner"><img src="/assets/images/ad_3.jpg" alt=""></a></div>
+          <div class="col-6"><a class="parnters__bunner  parnters__bunner--1"><h3 class="parnters__bunner-title">Литература для бизнеса</h3><img src="/assets/images/ad_2.png" alt=""></a></div>
+          <div class="col-6"><a class="parnters__bunner  parnters__bunner--2"><h3 class="parnters__bunner-title  parnters__bunner-title--bottom">Бизнес-сувениры</h3><img src="/assets/images/ad_2.png" alt=""></a></div>
         </div>
       </div>
     </section>
   </main>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </body>
 </html>

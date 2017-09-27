@@ -22,8 +22,10 @@ img {
 
 section {
 	padding: 50px 0;
-	margin-bottom: 10px;
 	background-color: #F8F8F8;
+  &:nth-child(odd) {
+    background-color: #ffffff;
+  }
 }
 
 .main-content {
@@ -67,19 +69,27 @@ section {
 	}
 }
 
+.user-menu {
+  height: 100%;
+  padding: 2% 0;
+}
 .user-menu__items {
 	display: flex;
 	flex-wrap: wrap;
+  justify-content: space-between;
 	align-items: baseline;
+  align-content: space-around;
+  margin-bottom: 0;
+  height: 100%;
+  padding: 2% 0;
 }
 
 .user-menu__item {
 	width: 30%;
 	text-align: center;
-	margin-bottom: 20px;
 	a {
 		display: block;
-		color: #000000;
+		color: #747474;
 		&:hover {
 			color: $primary;
 			text-decoration: none;
@@ -87,9 +97,66 @@ section {
 	}
 }
 
-.busket {
+.basket {
 	padding: 7px 20px;
 	border: 1px solid #c0c0c0;
+  &:hover {
+    border-color: $primary;
+  }
+}
+
+.form-group {
+  position: relative;
+  display: flex;
+  width: 100%;
+  border: 2px solid $primary;
+}
+
+.form-group__nav {
+  position: absolute;
+  left: 1%;
+  top: 2px;
+  min-width: 10%;
+  height: 30px;
+  background-image: linear-gradient(to bottom,#e85538 0,#e4003a 100%);
+  border: 2px solid #e85538;
+  border-radius: 10px;
+}
+
+.form-group__field {
+  width: 90%;
+  line-height: 28px;
+  padding: 3px 0;
+  padding-left: 11.5%;
+  border: none;
+  outline: none;
+  &:focus {
+    box-shadow: inset 0 1px 1px rgba(229,229,229,0.75), 0 0 8px rgba(228,0,58,0.6);
+  }
+}
+
+.header-search {
+  margin-top: 10px;
+}
+
+.header-search__btn {
+  width: 11%;
+}
+
+.form-button {
+  background-image: linear-gradient(to bottom,#e85538 0,#e4003a 100%);
+  border: 2px solid #e85538;
+  color: #ffffff;
+  text-transform: uppercase;
+  outline: none;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    box-shadow: 0 1px 0 rgba(0,0,0,0.3);
+    border: 3px solid #e85538;
+  }
 }
 
 .promo__bunners {
@@ -131,20 +198,62 @@ section {
 }
 
 .catalog__item {
-	display: block;
-	height: 250px;
-	background: url('/assets/images/item_2.png') no-repeat;
-	background-size: cover;
+	display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding: 20px 0;
+  text-align: center;
+  background-color: #BFF7FE;
 	cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0,0,0,.28);
+  transition: box-shadow 150ms linear;
+  transition: opacity 0.2s ease-in-out;
+  img {
+    width: 200px;
+    height: 200px;
+  }
+  &:hover {
+    opacity: 0.8;
+    box-shadow: 0 1px 3px rgba(0,0,0,.28);
+    transition: box-shadow 150ms linear;
+    transition: opacity 0.2s ease-in-out;
+  }
+}
+
+
+$s-min: 35;
+$s-max: 60;
+$l-min: 70;
+$l-max: 80;
+
+@for $i from 1 through 10 {
+  .catalog__item--#{$i},
+   .parnters__bunner--#{$i}{
+     background-color: hsl(random(360),$s-min+random($s-max+-$s-min),$l-min+random($l-max+-$l-min));
+   }
+}
+
+
+.catalog-item__header {
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  padding-top: 10px;
+  &--bottom {
+    order: 2;
+    margin-top: 2rem;
+    margin-bottom: 0;
+  }
 }
 
 .ad__bunner {
 	display: block;
-	min-height: 350px;
 	cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0,0,0,.28);
+  transition: box-shadow 150ms linear;
 	&:hover {
 		opacity: 0.8;
-		box-shadow: 0 1px 3px rgba(0,0,0,.28);
+		box-shadow: 0 1px 5px rgba(0,0,0,.28);
 		transition: box-shadow 150ms linear;
 		transition: opacity 0.2s ease-in-out;
 	}
@@ -154,10 +263,8 @@ section {
 .parnters__bunner {
 	display: block;
 	width: 100%;
-	min-height: 300px;
     text-align: center;
     border-radius: 2px;
-    background: #fff;
     transition: box-shadow 150ms linear;
 	box-shadow: 0 1px 3px rgba(0,0,0,.28);
 	transition: box-shadow 150ms linear;
@@ -165,7 +272,7 @@ section {
     cursor: pointer;
     &:hover {
     	opacity: 0.8;
-		box-shadow: 0 1px 3px rgba(0,0,0,.28);
+		box-shadow: 0 1px 5px rgba(0,0,0,.28);
 		transition: box-shadow 150ms linear;
 		transition: opacity 0.2s ease-in-out;
     	.product-card__name {
@@ -176,6 +283,13 @@ section {
     	width: 100%;
     	object-fit: cover;
     }
+}
+
+.parnters__bunner {
+  display: flex;
+  flex-direction: column;
+  padding: 5% 10%;
+  height: 100%;
 }
 
 .product-card__header {
@@ -202,8 +316,19 @@ section {
 
 .product-card__price {
 	font-weight: bold;
-  font-size: 20px;
-  color: white;
+}
+
+
+.parnters__bunner {
+  position: relative;
+}
+
+.parnters__bunner-title {
+  top: 10%;
+  text-transform: uppercase;
+  &--bottom {
+    order: 2;
+  }
 }
 
 
