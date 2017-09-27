@@ -1,14 +1,41 @@
-<nav class="navbar navbar-expand-md navbar-light">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item" *ngFor="let item of navigationItems">
-        <a class="nav-link" href="#" routerLink="/">{{item.name}}</a>
-      </li>
-    </ul>
-
+<nav class="main-nav">
+  <div class="row">
+    <div class="col-12">
+      <ul class="main-nav__items">
+        <li class="main-nav__item" *ngFor="let item of navigationItems">
+          <a class="main-nav__link" href="#" routerLink="/">{{item.name}}</a>
+        </li>
+        <li class="main-nav__item main-nav__item--dropdown  drop-menu  drop-menu--hide">
+          <a class=" main-nav__link" href="#">Dropdown</a>
+          <div class="drop-menu__items">
+            <div class="drop-menu__items-wrapper">
+            <a class="main-nav__link  drop-menu__item" href="#">Action</a>
+            <a class="main-nav__link  drop-menu__item" href="#">Another action</a>
+            <a class="main-nav__link  drop-menu__item" href="#">Something else here</a>
+            </div>
+          </div>
+        </li>
+        <li class="main-nav__item main-nav__item--dropdown  drop-menu  drop-menu--hide">
+          <a class=" main-nav__link" href="#">Dropdown</a>
+          <div class="drop-menu__items">
+            <div class="drop-menu__items-wrapper">
+              <a class="main-nav__link  drop-menu__item" href="#">Action</a>
+              <a class="main-nav__link  drop-menu__item" href="#">Another action</a>
+              <a class="main-nav__link  drop-menu__item" href="#">Something else here</a>
+            </div>
+          </div>
+        </li>
+        <li class="main-nav__item main-nav__item--dropdown  drop-menu  drop-menu--hide">
+          <a class=" main-nav__link" href="#">Dropdown</a>
+          <div class="drop-menu__items">
+            <div class="drop-menu__items-wrapper">
+              <a class="main-nav__link  drop-menu__item" href="#">Action</a>
+              <a class="main-nav__link  drop-menu__item" href="#">Another action</a>
+              <a class="main-nav__link  drop-menu__item" href="#">Something else here</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>

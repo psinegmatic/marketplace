@@ -3,9 +3,6 @@ $accent: orange;
 $primary: #DE1F31;
 $secondary: #F8F8F8;
 
-
-
-// @import "media"; // Всегда в конце
 ul {
   margin-bottom: 0;
 }
@@ -156,6 +153,92 @@ section {
   &:hover {
     box-shadow: 0 1px 0 rgba(0,0,0,0.3);
     border: 3px solid #e85538;
+  }
+}
+
+.main-nav {
+  border: 2px solid $secondary;
+  border-right: none;
+  border-left: none;
+  padding: 0.5rem 0;
+}
+
+.main-nav__items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 0;
+}
+
+.main-nav__item {
+  &:not(:last-child) {
+    .main-nav__link {
+      position: relative;
+      font-size: 0.8rem;
+      &:after {
+        position: absolute;
+        top: 35%;
+        right: 0;
+        content: '';
+        height: 14px;
+        border-right: 2px solid #747474;
+      }
+    }
+  }
+}
+
+.main-nav__link {
+  padding: 0.5rem 0.7rem;
+  font-size: 0.9rem;
+  color: #7f7f7f;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+    color: $primary;
+  }
+}
+
+.drop-menu {
+  position: relative;
+  border: 1px solid transparent;
+  .drop-menu__items {
+    display: none;
+  }
+  &--active {
+    border: 1px solid #747474;
+    .main-nav__link {
+      &:after {
+        display: none;
+      }
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: #ffffff;
+      z-index: 1100;
+    }
+    .drop-menu__items {
+      display: block;
+    }
+  }
+  .drop-menu__items-wrapper {
+    position: absolute;
+    left: -1px;
+    display: flex;
+    flex-direction: column;
+    width: 200%;
+    background-color: #ffffff;
+    border: 1px solid #747474;
+    z-index: 1000;
+  }
+}
+
+.drop-menu__item {
+  &:after {
+    display: none;
   }
 }
 
