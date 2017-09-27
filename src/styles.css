@@ -12,8 +12,6 @@ img {
 section {
   padding: 50px 0;
   background-color: #F8F8F8; }
-  section:nth-child(odd) {
-    background-color: #ffffff; }
 
 .main-content {
   background-color: #ffffff; }
@@ -55,7 +53,7 @@ section {
 .user-menu__items {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: baseline;
   align-content: space-around;
   margin-bottom: 0;
@@ -133,7 +131,8 @@ section {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  padding: 0; }
+  padding: 0;
+  margin-bottom: 0; }
 
 .main-nav__item:not(:last-child) .main-nav__link {
   position: relative;
@@ -216,7 +215,7 @@ section {
   cursor: pointer; }
 
 .catalog {
-  background-color: #F8F8F8; }
+  background-color: #ffffff; }
 
 .catalog__item {
   display: flex;
@@ -241,43 +240,43 @@ section {
 
 .catalog__item--1,
 .parnters__bunner--1 {
-  background-color: #a8a9d6; }
+  background-color: #a6bade; }
 
 .catalog__item--2,
 .parnters__bunner--2 {
-  background-color: #e3b0ca; }
+  background-color: #aee5c2; }
 
 .catalog__item--3,
 .parnters__bunner--3 {
-  background-color: #bbb3db; }
+  background-color: #d19eb8; }
 
 .catalog__item--4,
 .parnters__bunner--4 {
-  background-color: #dce7a6; }
+  background-color: #c094e0; }
 
 .catalog__item--5,
 .parnters__bunner--5 {
-  background-color: #dfb9cd; }
+  background-color: #d8a6b4; }
 
 .catalog__item--6,
 .parnters__bunner--6 {
-  background-color: #b2c9e6; }
+  background-color: #a9dfd3; }
 
 .catalog__item--7,
 .parnters__bunner--7 {
-  background-color: #df9697; }
+  background-color: #9a93d7; }
 
 .catalog__item--8,
 .parnters__bunner--8 {
-  background-color: #afe4b4; }
+  background-color: #dfd29f; }
 
 .catalog__item--9,
 .parnters__bunner--9 {
-  background-color: #b3d7e5; }
+  background-color: #dedc8c; }
 
 .catalog__item--10,
 .parnters__bunner--10 {
-  background-color: #dcd398; }
+  background-color: #a7e7cd; }
 
 .catalog-item__header {
   margin-bottom: 2rem;
@@ -287,6 +286,9 @@ section {
     order: 2;
     margin-top: 2rem;
     margin-bottom: 0; }
+
+.parnters {
+  background-color: #ffffff; }
 
 .ad__bunner {
   display: block;

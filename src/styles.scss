@@ -20,9 +20,6 @@ img {
 section {
   padding: 50px 0;
   background-color: #F8F8F8;
-  &:nth-child(odd) {
-    background-color: #ffffff;
-  }
 }
 
 .main-content {
@@ -73,7 +70,7 @@ section {
 .user-menu__items {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: baseline;
   align-content: space-around;
   margin-bottom: 0;
@@ -168,6 +165,7 @@ section {
   flex-wrap: wrap;
   justify-content: flex-start;
   padding: 0;
+  margin-bottom: 0;
 }
 
 .main-nav__item {
@@ -277,7 +275,7 @@ section {
 }
 
 .catalog {
-  background-color: #F8F8F8;
+  background-color: #ffffff;
 }
 
 .catalog__item {
@@ -327,6 +325,10 @@ $l-max: 80;
     margin-top: 2rem;
     margin-bottom: 0;
   }
+}
+
+.parnters {
+  background-color: #ffffff;
 }
 
 .ad__bunner {
