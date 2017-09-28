@@ -10,9 +10,13 @@
             </div>
           </div>
         </li>
-        <li class="main-nav__item main-nav__item--dropdown  hover-menu">
-          <a class="main-nav__more" href="#">Еще
-          </a>
+        <li class="main-nav__item main-nav__item--dropdown  hover-menu hover-menu--more" [class.hidden]="hiddenNavigationItems.length == 0">
+          <a class="main-nav__more" href="#">Еще</a>
+          <div class="hover-menu__items">
+            <div class="hover-menu__items-wrapper">
+              <a class="main-nav__link  hover-menu__item" [class.main-nav__item--hidden]="item.visible" href="{{item.url}}" *ngFor="let item of navigationItems">{{item.name}}</a>
+            </div>
+          </div>
         </li>
       </ul>
 

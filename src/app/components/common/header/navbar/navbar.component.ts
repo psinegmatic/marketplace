@@ -10,7 +10,7 @@ import {isUndefined} from "util";
 })
 export class NavbarComponent implements OnInit {
   navigationItems: NavigationItem[];
-
+  hiddenNavigationItems: any[] = [];
   constructor(public commonService: CommonService) {
 
   }
@@ -23,10 +23,17 @@ export class NavbarComponent implements OnInit {
     if(item.visible){
       if (itemRectangle.right > menuRectangle.right) {
         item.visible = false;
+        this.hiddenNavigationItems.push({
+          item: item,
+          rightPosition: itemRectangle.right
+        });
       }
     } else {
-      if (itemRectangle.right < menuRectangle.right) {
-        item.visible = true;
+      for (let i = this.hiddenNavigationItems.length - 1; i >= 0; i--){
+        if(this.hiddenNavigationItems[i].item === item && this.hiddenNavigationItems[i].rightPosition < menuRectangle.right){
+          item.visible = true;
+          this.hiddenNavigationItems.splice(i, 1);
+        }
       }
     }
   }

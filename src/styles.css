@@ -16,7 +16,10 @@ section {
     background-color: #ffffff; }
 
 .hidden {
-  display: none; }
+  display: none !important; }
+
+.invisible {
+  opacity: 0 !important; }
 
 .main-content {
   background-color: #ffffff; }
@@ -248,10 +251,10 @@ section {
 
 .main-nav__item {
   display: inline-block; }
-  .main-nav__item:not(:last-child) .main-nav__link {
+  .main-nav__item:not(.hover-menu--more) .main-nav__link {
     position: relative;
     font-size: 0.8rem; }
-    .main-nav__item:not(:last-child) .main-nav__link:after {
+    .main-nav__item:not(.hover-menu--more) .main-nav__link:after {
       position: absolute;
       top: 35%;
       right: 0;
@@ -259,7 +262,7 @@ section {
       height: 14px;
       border-right: 2px solid #747474; }
   .main-nav__item--hidden {
-    opacity: 0; }
+    display: none; }
 
 .main-nav__link {
   padding: 0.5rem 0.7rem;
@@ -270,7 +273,7 @@ section {
     text-decoration: none;
     color: #DE1F31; }
   .main-nav__link--hidden {
-    opacity: 0; }
+    display: none; }
   .main-nav__link--none {
     display: none; }
 
@@ -361,43 +364,43 @@ section {
 
 .catalog__item--1,
 .parnters__bunner--1 {
-  background-color: #a498e2; }
+  background-color: #c4dbb3; }
 
 .catalog__item--2,
 .parnters__bunner--2 {
-  background-color: #bedc8f; }
+  background-color: #b0e699; }
 
 .catalog__item--3,
 .parnters__bunner--3 {
-  background-color: #e4beb4; }
+  background-color: #99bbd1; }
 
 .catalog__item--4,
 .parnters__bunner--4 {
-  background-color: #a7ddc2; }
+  background-color: #eaa9d2; }
 
 .catalog__item--5,
 .parnters__bunner--5 {
-  background-color: #9bc4e4; }
+  background-color: #dddf9b; }
 
 .catalog__item--6,
 .parnters__bunner--6 {
-  background-color: #9ce3be; }
+  background-color: #a5c5d5; }
 
 .catalog__item--7,
 .parnters__bunner--7 {
-  background-color: #d6a8ae; }
+  background-color: #c1d9a6; }
 
 .catalog__item--8,
 .parnters__bunner--8 {
-  background-color: #99a5d6; }
+  background-color: #90dbdf; }
 
 .catalog__item--9,
 .parnters__bunner--9 {
-  background-color: #b8c7e0; }
+  background-color: #ade6e4; }
 
 .catalog__item--10,
 .parnters__bunner--10 {
-  background-color: #aeacdd; }
+  background-color: #e59edc; }
 
 .catalog-item__header {
   margin-bottom: 2rem;
