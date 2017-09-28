@@ -15,6 +15,9 @@ section {
   section:nth-child(odd) {
     background-color: #ffffff; }
 
+.hidden {
+  display: none; }
+
 .main-content {
   background-color: #ffffff; }
   .main-content h2 {
@@ -130,21 +133,26 @@ section {
   padding: 0.5rem 0; }
 
 .main-nav__items {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  padding: 0; }
+  padding: 0;
+  white-space: nowrap;
+  overflow-x: hidden;
+  height: 31px;
+  display: inline-block; }
 
-.main-nav__item:not(:last-child) .main-nav__link {
-  position: relative;
-  font-size: 0.8rem; }
-  .main-nav__item:not(:last-child) .main-nav__link:after {
-    position: absolute;
-    top: 35%;
-    right: 0;
-    content: '';
-    height: 14px;
-    border-right: 2px solid #747474; }
+.main-nav__item {
+  display: inline-block; }
+  .main-nav__item:not(:last-child) .main-nav__link {
+    position: relative;
+    font-size: 0.8rem; }
+    .main-nav__item:not(:last-child) .main-nav__link:after {
+      position: absolute;
+      top: 35%;
+      right: 0;
+      content: '';
+      height: 14px;
+      border-right: 2px solid #747474; }
+  .main-nav__item__hidden {
+    opacity: 0; }
 
 .main-nav__link {
   padding: 0.5rem 0.7rem;
@@ -154,6 +162,8 @@ section {
   .main-nav__link:hover {
     text-decoration: none;
     color: #DE1F31; }
+  .main-nav__link__hidden {
+    opacity: 0; }
 
 .drop-menu {
   position: relative;
@@ -180,6 +190,7 @@ section {
     display: flex;
     flex-direction: column;
     width: 200%;
+    min-width: 150px;
     background-color: #ffffff;
     border: 1px solid #747474;
     z-index: 1000; }
@@ -241,43 +252,43 @@ section {
 
 .catalog__item--1,
 .parnters__bunner--1 {
-  background-color: #a8a9d6; }
+  background-color: #ddb6c9; }
 
 .catalog__item--2,
 .parnters__bunner--2 {
-  background-color: #e3b0ca; }
+  background-color: #e3b8b5; }
 
 .catalog__item--3,
 .parnters__bunner--3 {
-  background-color: #bbb3db; }
+  background-color: #b58fe0; }
 
 .catalog__item--4,
 .parnters__bunner--4 {
-  background-color: #dce7a6; }
+  background-color: #a1e1e2; }
 
 .catalog__item--5,
 .parnters__bunner--5 {
-  background-color: #dfb9cd; }
+  background-color: #e7d6a6; }
 
 .catalog__item--6,
 .parnters__bunner--6 {
-  background-color: #b2c9e6; }
+  background-color: #a9d89c; }
 
 .catalog__item--7,
 .parnters__bunner--7 {
-  background-color: #df9697; }
+  background-color: #bd94e1; }
 
 .catalog__item--8,
 .parnters__bunner--8 {
-  background-color: #afe4b4; }
+  background-color: #e1ae93; }
 
 .catalog__item--9,
 .parnters__bunner--9 {
-  background-color: #b3d7e5; }
+  background-color: #99cfd1; }
 
 .catalog__item--10,
 .parnters__bunner--10 {
-  background-color: #dcd398; }
+  background-color: #9ad1e5; }
 
 .catalog-item__header {
   margin-bottom: 2rem;
