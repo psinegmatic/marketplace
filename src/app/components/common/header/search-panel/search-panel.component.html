@@ -8,13 +8,7 @@
                 Везде <i class="fa fa-caret-down" aria-hidden="true"></i>
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Электроника</a>
-                <a class="dropdown-item" href="#">Канцелярия</a>
-                <a class="dropdown-item" href="#">Оргтехника</a>
-                <a class="dropdown-item" href="#">Оргтехника</a>
-                <a class="dropdown-item" href="#">Оргтехника</a>
-                <a class="dropdown-item" href="#">Оргтехника</a>
-                <a class="dropdown-item" href="#">Оргтехника</a>
+                <a class="dropdown-item" href="#" *ngFor="let item of navigationItems">{{item.name}}</a>
               </div>
           </div>
           <input type="text" class="form-group__field">

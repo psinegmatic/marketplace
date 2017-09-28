@@ -12,6 +12,11 @@ img {
 section {
   padding: 50px 0;
   background-color: #F8F8F8; }
+  section:nth-child(odd) {
+    background-color: #ffffff; }
+
+.hidden {
+  display: none; }
 
 .main-content {
   background-color: #ffffff; }
@@ -136,7 +141,7 @@ section {
 .user-menu__items {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: baseline;
   align-content: space-around;
   margin-bottom: 0;
@@ -190,7 +195,7 @@ section {
   height: 100%;
   text-align: center;
   background-image: linear-gradient(to bottom, #e85538 0, #e4003a 100%);
-  border: 2px solid #e85538;
+  border: none;
   color: #ffffff;
   text-transform: uppercase;
   outline: none;
@@ -198,8 +203,7 @@ section {
   .form-group__nav-button:focus {
     outline: none; }
   .form-group__nav-button:hover {
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
-    border: 2px solid #e85538; }
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.3); }
 
 .form-group__field {
   flex-grow: 1;
@@ -219,7 +223,7 @@ section {
 
 .form-button {
   background-image: linear-gradient(to bottom, #e85538 0, #e4003a 100%);
-  border: 2px solid #e85538;
+  border: none;
   color: #ffffff;
   text-transform: uppercase;
   outline: none;
@@ -227,8 +231,7 @@ section {
   .form-button:focus {
     outline: none; }
   .form-button:hover {
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
-    border: 3px solid #e85538; }
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.3); }
 
 .main-nav {
   border: 2px solid #F8F8F8;
@@ -237,22 +240,26 @@ section {
   padding: 0.5rem 0; }
 
 .main-nav__items {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
   padding: 0;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  white-space: nowrap;
+  height: 31px;
+  display: inline-block; }
 
-.main-nav__item:not(:last-child) .main-nav__link {
-  position: relative;
-  font-size: 0.8rem; }
-  .main-nav__item:not(:last-child) .main-nav__link:after {
-    position: absolute;
-    top: 35%;
-    right: 0;
-    content: '';
-    height: 14px;
-    border-right: 2px solid #747474; }
+.main-nav__item {
+  display: inline-block; }
+  .main-nav__item:not(:last-child) .main-nav__link {
+    position: relative;
+    font-size: 0.8rem; }
+    .main-nav__item:not(:last-child) .main-nav__link:after {
+      position: absolute;
+      top: 35%;
+      right: 0;
+      content: '';
+      height: 14px;
+      border-right: 2px solid #747474; }
+  .main-nav__item--hidden {
+    opacity: 0; }
 
 .main-nav__link {
   padding: 0.5rem 0.7rem;
@@ -262,6 +269,10 @@ section {
   .main-nav__link:hover {
     text-decoration: none;
     color: #DE1F31; }
+  .main-nav__link--hidden {
+    opacity: 0; }
+  .main-nav__link--none {
+    display: none; }
 
 .hover-menu {
   position: relative;
@@ -288,6 +299,7 @@ section {
     display: flex;
     flex-direction: column;
     width: 200%;
+    min-width: 150px;
     background-color: #ffffff;
     border: 1px solid #747474;
     z-index: 1000; }
@@ -324,7 +336,7 @@ section {
   cursor: pointer; }
 
 .catalog {
-  background-color: #ffffff; }
+  background-color: #F8F8F8; }
 
 .catalog__item {
   display: flex;
@@ -349,43 +361,43 @@ section {
 
 .catalog__item--1,
 .parnters__bunner--1 {
-  background-color: #e3a6af; }
+  background-color: #a498e2; }
 
 .catalog__item--2,
 .parnters__bunner--2 {
-  background-color: #e0b8da; }
+  background-color: #bedc8f; }
 
 .catalog__item--3,
 .parnters__bunner--3 {
-  background-color: #afc9e9; }
+  background-color: #e4beb4; }
 
 .catalog__item--4,
 .parnters__bunner--4 {
-  background-color: #e2b1c2; }
+  background-color: #a7ddc2; }
 
 .catalog__item--5,
 .parnters__bunner--5 {
-  background-color: #a2e6de; }
+  background-color: #9bc4e4; }
 
 .catalog__item--6,
 .parnters__bunner--6 {
-  background-color: #c0b4e4; }
+  background-color: #9ce3be; }
 
 .catalog__item--7,
 .parnters__bunner--7 {
-  background-color: #9fadd6; }
+  background-color: #d6a8ae; }
 
 .catalog__item--8,
 .parnters__bunner--8 {
-  background-color: #96e3b6; }
+  background-color: #99a5d6; }
 
 .catalog__item--9,
 .parnters__bunner--9 {
-  background-color: #9ed6d1; }
+  background-color: #b8c7e0; }
 
 .catalog__item--10,
 .parnters__bunner--10 {
-  background-color: #abe6a2; }
+  background-color: #aeacdd; }
 
 .catalog-item__header {
   margin-bottom: 2rem;
@@ -395,9 +407,6 @@ section {
     order: 2;
     margin-top: 2rem;
     margin-bottom: 0; }
-
-.parnters {
-  background-color: #ffffff; }
 
 .ad__bunner {
   display: block;

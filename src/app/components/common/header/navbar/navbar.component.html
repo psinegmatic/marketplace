@@ -1,37 +1,12 @@
-<nav class="main-nav">
+<nav class="main-nav" #mainNav>
   <div class="row">
     <div class="col-12">
       <ul class="main-nav__items">
-        <li class="main-nav__item" *ngFor="let item of navigationItems">
+        <li class="main-nav__item main-nav__item--dropdown  hover-menu  hover-menu--hide" [class.main-nav__item--hidden]="!item.visible" *ngFor="let item of navigationItems" #elem (window:resize)="onResize($event, item, elem.getBoundingClientRect(), mainNav.getBoundingClientRect())">
           <a class="main-nav__link" href="#" routerLink="/">{{item.name}}</a>
-        </li>
-        <li class="main-nav__item main-nav__item--dropdown  hover-menu  hover-menu--hide">
-          <a class=" main-nav__link" href="#">Dropdown</a>
           <div class="hover-menu__items">
             <div class="hover-menu__items-wrapper">
-            <a class="main-nav__link  hover-menu__item" href="#">Action</a>
-            <a class="main-nav__link  hover-menu__item" href="#">Another action</a>
-            <a class="main-nav__link  hover-menu__item" href="#">Something else here</a>
-            </div>
-          </div>
-        </li>
-        <li class="main-nav__item main-nav__item--dropdown  hover-menu  hover-menu--hide">
-          <a class=" main-nav__link" href="#">Dropdown</a>
-          <div class="hover-menu__items">
-            <div class="hover-menu__items-wrapper">
-              <a class="main-nav__link  hover-menu__item" href="#">Action</a>
-              <a class="main-nav__link  hover-menu__item" href="#">Another action</a>
-              <a class="main-nav__link  hover-menu__item" href="#">Something else here</a>
-            </div>
-          </div>
-        </li>
-        <li class="main-nav__item main-nav__item--dropdown  hover-menu  hover-menu--hide">
-          <a class=" main-nav__link" href="#">Dropdown</a>
-          <div class="hover-menu__items">
-            <div class="hover-menu__items-wrapper">
-              <a class="main-nav__link  hover-menu__item" href="#">Action</a>
-              <a class="main-nav__link  hover-menu__item" href="#">Another action</a>
-              <a class="main-nav__link  hover-menu__item" href="#">Something else here</a>
+              <a class="main-nav__link  hover-menu__item" href="{{childItem.name}}" *ngFor="let childItem of item.childList">{{childItem.name}}</a>
             </div>
           </div>
         </li>

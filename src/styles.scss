@@ -20,6 +20,13 @@ img {
 section {
   padding: 50px 0;
   background-color: #F8F8F8;
+  &:nth-child(odd) {
+    background-color: #ffffff;
+  }
+}
+
+.hidden {
+  display: none;
 }
 
 .main-content {
@@ -168,7 +175,7 @@ section {
 .user-menu__items {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: baseline;
   align-content: space-around;
   margin-bottom: 0;
@@ -232,7 +239,7 @@ section {
   height: 100%;
   text-align: center;
   background-image: linear-gradient(to bottom, #e85538 0, #e4003a 100%);
-  border: 2px solid #e85538;
+  border: none;
   color: #ffffff;
   text-transform: uppercase;
   outline: none;
@@ -242,7 +249,6 @@ section {
   }
   &:hover {
     box-shadow: 0 1px 0 rgba(0,0,0,0.3);
-    border: 2px solid #e85538;
   }
 }
 
@@ -270,7 +276,7 @@ section {
 
 .form-button {
   background-image: linear-gradient(to bottom,#e85538 0,#e4003a 100%);
-  border: 2px solid #e85538;
+  border: none;
   color: #ffffff;
   text-transform: uppercase;
   outline: none;
@@ -280,7 +286,6 @@ section {
   }
   &:hover {
     box-shadow: 0 1px 0 rgba(0,0,0,0.3);
-    border: 3px solid #e85538;
   }
 }
 
@@ -292,14 +297,15 @@ section {
 }
 
 .main-nav__items {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
   padding: 0;
   margin-bottom: 0;
+  white-space: nowrap;
+  height: 31px;
+  display: inline-block;
 }
 
 .main-nav__item {
+  display: inline-block;
   &:not(:last-child) {
     .main-nav__link {
       position: relative;
@@ -314,6 +320,9 @@ section {
       }
     }
   }
+  &--hidden {
+    opacity: 0;
+  }
 }
 
 .main-nav__link {
@@ -325,6 +334,16 @@ section {
     text-decoration: none;
     color: $primary;
   }
+  &--hidden {
+    opacity: 0;
+  }
+  &--none {
+    display: none;
+  }
+}
+
+.main-nav__more {
+
 }
 
 .hover-menu {
@@ -359,6 +378,7 @@ section {
     display: flex;
     flex-direction: column;
     width: 200%;
+    min-width: 150px;
     background-color: #ffffff;
     border: 1px solid #747474;
     z-index: 1000;
@@ -406,7 +426,7 @@ section {
 }
 
 .catalog {
-  background-color: #ffffff;
+  background-color: #F8F8F8;
 }
 
 .catalog__item {
@@ -456,10 +476,6 @@ $l-max: 80;
     margin-top: 2rem;
     margin-bottom: 0;
   }
-}
-
-.parnters {
-  background-color: #ffffff;
 }
 
 .ad__bunner {
