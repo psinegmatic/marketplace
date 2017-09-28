@@ -21,6 +21,7 @@ import { CatalogsComponent } from './components/home/catalogs/catalogs.component
 import { CatalogItemsComponent } from './components/home/catalog-items/catalog-items.component';
 import { AdvertisementComponent } from './components/home/advertisement/advertisement.component';
 import { HomeComponent } from './components/home/home.component';
+import { LocationComponent } from './components/common/header/location/location.component';
 
 /* Routes */
 const appRoutes: Routes = [
@@ -40,7 +41,8 @@ const appRoutes: Routes = [
     CatalogsComponent,
     CatalogItemsComponent,
     AdvertisementComponent,
-    HomeComponent
+    HomeComponent,
+    LocationComponent
   ],
   imports: [
     BrowserModule,

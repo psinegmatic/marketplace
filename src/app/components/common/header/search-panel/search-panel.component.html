@@ -3,7 +3,20 @@
     <div class="header-search">
       <form action="/search">
         <div class="form-group">
-          <div class="form-group__nav"></div>
+          <div class="form-group__nav  dropdown">
+              <button class="form-group__nav-button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Везде <i class="fa fa-caret-down" aria-hidden="true"></i>
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Электроника</a>
+                <a class="dropdown-item" href="#">Канцелярия</a>
+                <a class="dropdown-item" href="#">Оргтехника</a>
+                <a class="dropdown-item" href="#">Оргтехника</a>
+                <a class="dropdown-item" href="#">Оргтехника</a>
+                <a class="dropdown-item" href="#">Оргтехника</a>
+                <a class="dropdown-item" href="#">Оргтехника</a>
+              </div>
+          </div>
           <input type="text" class="form-group__field">
           <button type="button" class="header-search__btn form-button">Найти</button>
         </div>

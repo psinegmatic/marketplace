@@ -1,7 +1,7 @@
 $(function() {
-  $('ul.main-nav__items li.drop-menu').hover(function() {
-    $(this).addClass('drop-menu--active');
+  $('ul.main-nav__items li.hover-menu').hover(function() {
+    $(this).addClass('hover-menu--active');
   }, function() {
-    $(this).removeClass('drop-menu--active');
+    $(this).removeClass('hover-menu--active');
   });
 });
