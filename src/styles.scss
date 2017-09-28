@@ -168,15 +168,13 @@ section {
 }
 
 .main-nav__items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
   padding: 0;
-  white-space: nowrap;
-  overflow-x: hidden;
-  height: 31px;
-  display: inline-block;
 }
 
 .main-nav__item {
-  display: inline-block;
   &:not(:last-child) {
     .main-nav__link {
       position: relative;
@@ -191,9 +189,6 @@ section {
       }
     }
   }
-  &__hidden{
-    opacity: 0;
-  }
 }
 
 .main-nav__link {
@@ -204,9 +199,6 @@ section {
   &:hover {
     text-decoration: none;
     color: $primary;
-  }
-  &__hidden{
-    opacity: 0;
   }
 }
 
@@ -242,7 +234,6 @@ section {
     display: flex;
     flex-direction: column;
     width: 200%;
-    min-width: 150px;
     background-color: #ffffff;
     border: 1px solid #747474;
     z-index: 1000;
