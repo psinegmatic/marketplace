@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationItem } from '../../../../models/navigation-item';
-import { CommonService } from "../../../../services/common.service";
+import { CommonService } from '../../../../services/common.service';
 
 @Component({
   selector: 'app-search-panel',
@@ -10,6 +10,7 @@ import { CommonService } from "../../../../services/common.service";
 
 export class SearchPanelComponent implements OnInit {
   navigationItems: NavigationItem[];
+  buttonTitle: string = 'Везде';
 
   constructor(public commonService: CommonService) {
 
