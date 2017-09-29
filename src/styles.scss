@@ -39,6 +39,7 @@ section {
 
 .company-logo {
   display: flex;
+  align-items: flex-start;
   cursor: pointer;
   text-decoration: none;
   transition: opacity 0.2s ease-in-out;
@@ -242,6 +243,9 @@ section {
   border: none;
   color: #ffffff;
   text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   outline: none;
   cursor: pointer;
   &:focus {
@@ -306,14 +310,16 @@ section {
 
 .main-nav__item {
   display: inline-block;
-  &:not(:last-child) {
+  &:not(:first-child) {
     .main-nav__link {
       position: relative;
       font-size: 0.8rem;
-      &:after {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      &:before {
         position: absolute;
         top: 35%;
-        right: 0;
+        left: 0;
         content: '';
         height: 14px;
         border-right: 2px solid #747474;
@@ -355,7 +361,7 @@ section {
   &--active {
     border: 1px solid #747474;
     .main-nav__link {
-      &:after {
+      &:before {
         display: none;
       }
     }
@@ -377,8 +383,8 @@ section {
     left: -1px;
     display: flex;
     flex-direction: column;
-    width: 200%;
-    min-width: 150px;
+    min-width: 190px;
+    max-width: 250px;
     background-color: #ffffff;
     border: 1px solid #747474;
     z-index: 1000;
@@ -562,3 +568,5 @@ $l-max: 80;
     order: 2;
   }
 }
+
+@import "media";

@@ -42,7 +42,7 @@ const appRoutes: Routes = [
     CatalogItemsComponent,
     AdvertisementComponent,
     HomeComponent,
-    LocationComponent
+    LocationComponent,
   ],
   imports: [
     BrowserModule,
