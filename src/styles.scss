@@ -1,3 +1,5 @@
+@import "forms";
+
 $default-font: "roboto-example", sans-serif;
 $accent: orange;
 $primary: #DE1F31;
@@ -75,43 +77,32 @@ section {
   }
 }
 
-.location-menu {
+.location-menu,
+.account-menu {
   position: relative;
   border: 1px solid #000000;
   border-bottom: transparent;
+  color: #7f7f7f;
 }
 
-#modal-location {
+#modal-location,
+#modal-account{
   .modal-dialog {
     top: 40%;
     transform: translateY(-50%);
   }
 }
 
-.location-menu__toggle {
+.location-menu__toggle,
+.account__toggle {
   outline: none;
 }
 
-.location-menu__title {
+.modal-title {
   padding: 3% 2%;
 }
 
-.location-menu__search {
-  width: 100%;
-  padding: 5% 0 0 0;
-}
-
-.location-menu__search-field {
-  padding: 1% 2%;
-  border: 2px solid #747474;
-  outline: none;
-  line-height: 1.5rem;
-  &:focus {
-    border: 2px solid #e85538;
-  }
-}
-
-.location-menu__search-btn {
+.modal-btn {
   width: 100%;
   padding: 1% 2%;
   background-image: linear-gradient(to bottom,#e85538 0,#e4003a 100%);
@@ -120,57 +111,6 @@ section {
   line-height: 1.5 rem;
   text-transform: uppercase;
   outline: none;
-}
-
-.location-menu__links {
-  position: absolute;
-  left: -1px;
-  width: calc(100% + 2px);
-  background-color: #ffffff;
-  border: 1px solid #000000;
-  border-top: transparent;
-  z-index: 1200;
-}
-
-.location-menu__search-field {
-  width: 95%;
-  margin: 0 auto;
-  margin-bottom: 5%;
-}
-
-.location-menu__check-region {
-  margin-bottom: 5%;
-  input {
-    margin-right: 2%;
-  }
-}
-
-.checkbox,
-.radio {
-  display: none;
-}
-.checkbox-custom {
-  width: 20px;
-  height: 20px;
-  border: 2px solid #7f7f7f;
-  border-radius: 3px;
-  position: relative;
-}
-.checkbox-custom,
-.label {
-  display: inline-block;
-  vertical-align: middle;
-}
-.checkbox:checked + .checkbox-custom::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 2px;
-  right: 2px;
-  bottom: 2px;
-  left: 2px;
-  background: #e85538;
-  border-radius: 2px;
 }
 
 .user-menu {
@@ -221,7 +161,7 @@ section {
 }
 
 .basket {
-  padding: 7px 20px;
+  padding: 5%;
   border: 1px solid #c0c0c0;
   &:hover {
     border-color: $primary;
