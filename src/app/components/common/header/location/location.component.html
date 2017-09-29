@@ -3,23 +3,23 @@
 </a>
 
 <!-- MODAL -->
-<div class="modal location-menu" id="modal-location">
+<div class="modal  location-menu" id="modal-location">
   <div class="modal-dialog">
     <div class="modal-content">
-      <h2 class="location-menu__title">Выберите местоположение</h2>
-      <form class="location-menu__search">
-        <input type="text" class="location-menu__search-field" placeholder="Введите ваш город" name="kladrCity" [(ngModel)]="kladrCity" (keypress)="getCity_Event()">
+      <h2 class="modal-title">Выберите местоположение</h2>
+      <form class="form">
+        <input type="text" class="form__input" placeholder="Введите ваш город" name="kladrCity" [(ngModel)]="kladrCity" (keypress)="getCity_Event()">
         <ul>
           <li *ngFor="let city of kladrCityList" (click)="selectCity(city)"><a class="location-menu__link  drop-menu__item" href="#">{{city.name}}</a></li>
         </ul>
-        <div class="location-menu__check-region">
+        <div class="form__group">
           <label>
             <input class="checkbox" type="checkbox" name="checkbox-test">
             <span class="checkbox-custom"></span>
             <span class="label">Определять регион автоматически</span>
           </label>
         </div>
-        <button class="location-menu__search-btn" data-dismiss="modal">Закрыть</button>
+        <button class="modal-btn" data-dismiss="modal">Закрыть</button>
       </form>
     </div>
   </div>

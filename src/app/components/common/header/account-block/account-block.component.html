@@ -1,3 +1,27 @@
-<p>
-  account-block works!
-</p>
+<a href="#" class="account__toggle"  data-toggle="modal" data-target="#modal-account"><i class="fa fa-sign-out" aria-hidden="true"></i> Регистрация
+</a>
+
+<div class="modal  account-menu" id="modal-account">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <h2 class="modal-title">Регистрация</h2>
+      <form class="form">
+        <input type="text" class="form__input" placeholder="Имя">
+        <input type="text" class="form__input" placeholder="Фамилия">
+        <input type="text" class="form__input" placeholder="Придумайте логин">
+        <input type="password" class="form__input" placeholder="Придумайте пароль">
+        <input type="password" class="form__input" placeholder="Повторите, чтобы не ошибиться">
+        <input type="number" class="form__input" placeholder="Мобильный телефон">
+        <div class="form__group">
+          <label>
+            <input class="checkbox" type="checkbox" name="checkbox-test">
+            <span class="checkbox-custom"></span>
+            <span class="label">Соглашаюсь с условиями</span>
+          </label>
+        </div>
+        <button class="form-btn  form-btn--register" type="submit">Зарегистрироваться</button>
+      </form>
+      <button class="modal-btn" data-dismiss="modal">Закрыть</button>
+    </div>
+  </div>
+</div>
