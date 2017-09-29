@@ -396,6 +396,7 @@ export class CommonService {
   ]
 
   getNavigationItem() {
+    //TODO: Когда будет логика работы с беком, нужно сделать сохранение списка на UI
     return this.navigationItems;
   }
 

@@ -26,7 +26,11 @@ section {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
+}
+
+.invisible {
+  opacity: 0 !important;
 }
 
 .main-content {
@@ -310,7 +314,11 @@ section {
 
 .main-nav__item {
   display: inline-block;
+<<<<<<< HEAD
   &:not(:first-child) {
+=======
+  &:not(.hover-menu--more) {
+>>>>>>> e272ac793e2a7a6e281f3b480d8f77a850e47488
     .main-nav__link {
       position: relative;
       font-size: 0.8rem;
@@ -327,7 +335,7 @@ section {
     }
   }
   &--hidden {
-    opacity: 0;
+    display: none;
   }
 }
 
@@ -341,16 +349,13 @@ section {
     color: $primary;
   }
   &--hidden {
-    opacity: 0;
+    display: none;
   }
   &--none {
     display: none;
   }
 }
 
-.main-nav__more {
-
-}
 
 .hover-menu {
   position: relative;
