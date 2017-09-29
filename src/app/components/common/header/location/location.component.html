@@ -1,28 +1,17 @@
 <a href="#" class="location-menu__toggle"  data-toggle="modal" data-target="#modal-location">
-  <i class="fa fa-location-arrow" aria-hidden="true"></i> Москва
+  <i class="fa fa-location-arrow" aria-hidden="true"></i> {{userCityName}}
 </a>
 
-<!--<div class="location-menu  modal-location">-->
-  <!--<h2 class="location-menu__title">Выберите местоположение</h2>-->
-  <!--<form class="location-menu__search">-->
-    <!--<input type="text" class="location-menu__search-field">-->
-  <!--</form>-->
-  <!--<a class="location-menu__link  drop-menu__item" href="#">Севастополь</a>-->
-  <!--<a class="location-menu__link  drop-menu__item" href="#">Севастополь</a>-->
-  <!--<a class="location-menu__link  drop-menu__item" href="#">Севастополь</a>-->
-  <!--<a class="location-menu__link  drop-menu__item" href="#">Севастополь</a>-->
-  <!--<a class="location-menu__link  drop-menu__item" href="#">Севастополь</a>-->
-  <!--<a class="location-menu__link  drop-menu__item" href="#">Севастополь</a>-->
-  <!--<a class="location-menu__link  drop-menu__item" href="#">Севастополь</a>-->
-<!--</div>-->
-
 <!-- MODAL -->
-<div class="modal  location-menu" id="modal-location">
+<div class="modal location-menu" id="modal-location">
   <div class="modal-dialog">
     <div class="modal-content">
       <h2 class="location-menu__title">Выберите местоположение</h2>
       <form class="location-menu__search">
-        <input type="text" class="location-menu__search-field" placeholder="Введите ваш город">
+        <input type="text" class="location-menu__search-field" placeholder="Введите ваш город" name="kladrCity" [(ngModel)]="kladrCity" (keypress)="getCity_Event()">
+        <ul>
+          <li *ngFor="let city of kladrCityList" (click)="selectCity(city)"><a class="location-menu__link  drop-menu__item" href="#">{{city.name}}</a></li>
+        </ul>
         <div class="location-menu__check-region">
           <label>
             <input class="checkbox" type="checkbox" name="checkbox-test">

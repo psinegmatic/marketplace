@@ -1,26 +1,25 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
-import {Jsonp} from '@angular/http';
+import { Http, Jsonp, Response} from '@angular/http';
 import { NavigationItem } from '../models/navigation-item';
+import "rxjs/add/operator/catch";
+declare var ymaps: any;
 
 @Injectable()
 export class CommonService {
   kladrAPIUrl: string = "http://kladr-api.ru/api.php?";
-  constructor(private jsonp: Jsonp) {
+  geocode: Observable<any>;
+  kladrCitiesList: any;
 
-  }
+  constructor(private jsonp: Jsonp, private  http: Http) {  }
 
-  getKladrCitiesList(query) {
-    this.jsonp.get(this.kladrAPIUrl + "query=" + query + "&contentType=city&limit=5").map(res => {
-      return res.json().results.map(item => {
-        console.log(item);
+  getKladrCitiesList(query): Observable<any>{
+    return this.jsonp.get(this.kladrAPIUrl + "query=" + query + "&contentType=city&limit=5&callback=JSONP_CALLBACK")
+      .map(function(res){
+        return res.json() || {};
       });
-    });
-
-    return true;
   }
-
 
   /*-----------------------------------------*/
   navigationItems: any[] = [
@@ -398,6 +397,23 @@ export class CommonService {
   getNavigationItem() {
     //TODO: Когда будет логика работы с беком, нужно сделать сохранение списка на UI
     return this.navigationItems;
+  }
+
+  getUserCity(){
+    this.geocode = new Observable(observer => {
+      ymaps.ready(function () {
+        ymaps.geolocation.get({provider: 'browser', mapStateAutoApply: true})
+          .then(function (result){
+            observer.next(result.geoObjects.get(0).properties.getAll());
+            observer.complete();
+          },
+          function(res){
+            console.log(res);
+          });
+      })
+    });
+
+    return this.geocode;
   }
 
 }

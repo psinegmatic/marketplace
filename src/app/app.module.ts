@@ -1,8 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import {JsonpModule, Jsonp, Response} from '@angular/http';
+import { HttpModule, JsonpModule, Jsonp, Response} from '@angular/http';
 import { RouterModule, Routes} from '@angular/router';
 
 /* Import Services*/
@@ -47,7 +46,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    HttpClientModule,
+    HttpModule,
     FormsModule,
     JsonpModule
   ],
