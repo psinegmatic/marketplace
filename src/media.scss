@@ -4,12 +4,23 @@
 }
 
 @media (max-width: 991px) {
+  section {
+    padding: 2rem 0;
+  }
   .company-logo__title {
     font-size: 2.5rem;
+  }
+  .promo__bunner {
+    &--wide {
+      display: none;
+    }
   }
 }
 
 @media (max-width: 767px) {
+  section {
+    padding: 1rem 0;
+  }
   .company-logo {
     img {
       width: 120px;
@@ -46,6 +57,14 @@
     }
     .header-search__btn {
       width: 100%;
+    }
+  }
+  .promo__bunner {
+    &--narrow {
+      display: none;
+    }
+    &--wide {
+      display: block;
     }
   }
 }
