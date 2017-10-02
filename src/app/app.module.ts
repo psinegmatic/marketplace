@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule, Jsonp, Response} from '@angular/http';
 import { RouterModule, Routes} from '@angular/router';
+import { NgbModule } from  '@ng-bootstrap/ng-bootstrap';
 
 /* Import Services*/
 import { CommonService } from './services/common.service';
@@ -21,6 +22,7 @@ import { CatalogItemsComponent } from './components/home/catalog-items/catalog-i
 import { AdvertisementComponent } from './components/home/advertisement/advertisement.component';
 import { HomeComponent } from './components/home/home.component';
 import { LocationComponent } from './components/common/header/location/location.component';
+import {LocationService} from "./services/location.service";
 
 /* Routes */
 const appRoutes: Routes = [
@@ -48,9 +50,13 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     HttpModule,
     FormsModule,
-    JsonpModule
+    JsonpModule,
+    NgbModule.forRoot()
   ],
-  providers: [ CommonService ],
+  providers: [
+    CommonService,
+    LocationService
+  ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

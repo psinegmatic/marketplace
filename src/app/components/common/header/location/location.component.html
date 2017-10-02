@@ -1,8 +1,8 @@
-<a href="#" class="location-menu__toggle"  data-toggle="modal" data-target="#modal-location">
+<a href="#" class="location-menu__toggle" [ngbTooltip]="locationTooltipTemplate" #locationTooltip="ngbTooltip" >
   <i class="fa fa-location-arrow" aria-hidden="true"></i> {{userCityName}}
 </a>
 
-<!-- MODAL -->
+<!-- MODAL SELECT CITY-->
 <div class="modal  location-menu" id="modal-location">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -12,15 +12,23 @@
         <ul>
           <li *ngFor="let city of kladrCityList" (click)="selectCity(city)"><a class="location-menu__link  drop-menu__item" href="#">{{city.name}}</a></li>
         </ul>
-        <div class="form__group">
-          <label>
-            <input class="checkbox" type="checkbox" name="checkbox-test">
-            <span class="checkbox-custom"></span>
-            <span class="label">Определять регион автоматически</span>
-          </label>
-        </div>
-        <button class="modal-btn" data-dismiss="modal">Закрыть</button>
+        <!--<div class="form__group">-->
+          <!--<label>-->
+            <!--<input class="checkbox" type="checkbox" name="checkbox-test">-->
+            <!--<span class="checkbox-custom"></span>-->
+            <!--<span class="label">Определять регион автоматически</span>-->
+          <!--</label>-->
+        <!--</div>-->
+        <button class="modal-btn" data-dismiss="modal">Продолжить</button>
       </form>
     </div>
   </div>
 </div>
+
+<!-- MODAL CONFIRM CITY -->
+<ng-template #locationTooltipTemplate let-greeting="greeting">
+  <p>Ваш город</p>
+  <h5>{{userCityName}}</h5>
+  <button class="btn btn-danger" type="button">Да</button>
+  <button class="btn btn-light" type="button">Нет, выбрать другой</button>
+</ng-template>

@@ -1,29 +1,50 @@
-import { Component, OnInit } from '@angular/core';
-import {CommonService} from "../../../../services/common.service";
+import { Component, OnInit, ViewChild  } from '@angular/core';
+import {LocationService} from "../../../../services/location.service";
 import {ChangeDetectorRef} from '@angular/core';
+import {NgbTooltipConfig} from '@ng-bootstrap/ng-bootstrap';
 
 declare var ymaps: any;
 declare var $: any;
 
+
 @Component({
   selector: 'app-location',
   templateUrl: './location.component.html',
-  styleUrls: ['./location.component.css']
+  styleUrls: ['./location.component.css'],
+  providers: [NgbTooltipConfig]
 })
 export class LocationComponent implements OnInit {
-  userCityName: string = 'Москва';
+  userCityName?: string = 'Москва';
   kladrCity: string;
   kladrCityList: any[];
   private _timeout: any = null;
-  constructor(public commonService: CommonService, private ref:ChangeDetectorRef) {
 
+  @ViewChild("locationTooltip")
+  locationTooltip: HTMLElement;
+
+  constructor(public locationService: LocationService, private ref:ChangeDetectorRef, config: NgbTooltipConfig) {
+    config.placement = 'bottom';
+    config.triggers = 'click';
   }
 
   ngOnInit() {
-    this.commonService.getUserCity().subscribe(res => {
-      this.userCityName = res.name;
-      this.ref.detectChanges();
-    });
+    this.userCityName = this.locationService.getSavedLocation();
+    if (this.userCityName === null){
+      this.locationService.getUserLocation().subscribe(res => {
+        debugger;
+        this.userCityName = res;
+        this.ref.detectChanges();
+        //this.locationTooltip.open();
+      });
+    }
+
+  }
+
+  ngAfterViewInit() {
+
+  }
+
+  getUserLocationFromYandex() {
 
   }
 
@@ -32,7 +53,7 @@ export class LocationComponent implements OnInit {
       clearTimeout(this._timeout);
     }
     this._timeout = setTimeout(() =>{
-      this.commonService.getKladrCitiesList(this.kladrCity).subscribe(res => {
+      this.locationService.getKladrCitiesList(this.kladrCity).subscribe(res => {
         this.kladrCityList = res.result;
       });
     }, 1000);
@@ -43,5 +64,9 @@ export class LocationComponent implements OnInit {
     this.kladrCityList = [];
     this.kladrCity = '';
     $("#modal-location").modal('hide');
+  }
+
+  confirmCity(){
+
   }
 }
