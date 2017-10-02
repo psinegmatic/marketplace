@@ -27,11 +27,11 @@
 
 .form {
   width: 100%;
-  padding: 5% 0 0 0; }
+  padding: 5% 0; }
 
 .form__input {
   padding: 1% 2%;
-  border: 2px solid #747474;
+  border: 1px solid #dcdcdc;
   outline: none;
   line-height: 1.5rem; }
   .form__input:focus {
@@ -133,6 +133,9 @@ section {
   border: 1px solid #000000;
   border-bottom: transparent;
   color: #7f7f7f; }
+
+.account-menu button {
+  width: 40%; }
 
 #modal-location .modal-dialog,
 #modal-account .modal-dialog {
@@ -393,43 +396,43 @@ section {
 
 .catalog__item--1,
 .parnters__bunner--1 {
-  background-color: #a5e5a4; }
+  background-color: #b29adb; }
 
 .catalog__item--2,
 .parnters__bunner--2 {
-  background-color: #e5c9ae; }
+  background-color: #d9a6a8; }
 
 .catalog__item--3,
 .parnters__bunner--3 {
-  background-color: #96d49c; }
+  background-color: #8fdb91; }
 
 .catalog__item--4,
 .parnters__bunner--4 {
-  background-color: #a9e0d5; }
+  background-color: #dba3bc; }
 
 .catalog__item--5,
 .parnters__bunner--5 {
-  background-color: #e2d4b1; }
+  background-color: #8fbfdc; }
 
 .catalog__item--6,
 .parnters__bunner--6 {
-  background-color: #a0d8de; }
+  background-color: #9392dd; }
 
 .catalog__item--7,
 .parnters__bunner--7 {
-  background-color: #d7a8a9; }
+  background-color: #dbd99e; }
 
 .catalog__item--8,
 .parnters__bunner--8 {
-  background-color: #e0c0b3; }
+  background-color: #a1b4de; }
 
 .catalog__item--9,
 .parnters__bunner--9 {
-  background-color: #dea6d3; }
+  background-color: #e79e9d; }
 
 .catalog__item--10,
 .parnters__bunner--10 {
-  background-color: #db95a5; }
+  background-color: #e1c293; }
 
 .catalog-item__header {
   margin-bottom: 2rem;

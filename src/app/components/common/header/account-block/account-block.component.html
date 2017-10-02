@@ -1,27 +1,51 @@
-<a href="#" class="account__toggle"  data-toggle="modal" data-target="#modal-account"><i class="fa fa-sign-out" aria-hidden="true"></i> Регистрация
+<a href="#" class="location-menu__toggle" (click)="open(content)">
+  <i class="fa fa-user" aria-hidden="true"></i> Регистрация
 </a>
 
-<div class="modal  account-menu" id="modal-account">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <h2 class="modal-title">Регистрация</h2>
-      <form class="form">
-        <input type="text" class="form__input" placeholder="Имя">
-        <input type="text" class="form__input" placeholder="Фамилия">
-        <input type="text" class="form__input" placeholder="Придумайте логин">
-        <input type="password" class="form__input" placeholder="Придумайте пароль">
-        <input type="password" class="form__input" placeholder="Повторите, чтобы не ошибиться">
-        <input type="number" class="form__input" placeholder="Мобильный телефон">
-        <div class="form__group">
-          <label>
-            <input class="checkbox" type="checkbox" name="checkbox-test">
-            <span class="checkbox-custom"></span>
-            <span class="label">Соглашаюсь с условиями</span>
-          </label>
-        </div>
-        <button class="form-btn  form-btn--register" type="submit">Зарегистрироваться</button>
-      </form>
-      <button class="modal-btn" data-dismiss="modal">Закрыть</button>
-    </div>
+<!--account-modal-->
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-window__header">
+    <h4 class="modal-window__title">Вход</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
   </div>
-</div>
+  <div class="modal-window__content">
+    <ngb-tabset>
+      <ngb-tab>
+        <ng-template ngbTabTitle>Учетная запись</ng-template>
+        <ng-template ngbTabContent>
+          <div class="form">
+            <input type="text" class="form__input" placeholder="Логин">
+            <input type="password" class="form__input" placeholder="Пароль">
+            <button type="button" class="btn btn-danger">Вход</button>
+          </div>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab>
+        <ng-template ngbTabTitle>Сертификат</ng-template>
+        <ng-template ngbTabContent>
+          <div class="sertificates">
+            <div ngbDropdown>
+              <a class="sertificates__drop  form__input" id="dropdownBasic1" ngbDropdownToggle>Выберите сертификат</a>
+              <div class="sertificates__menu" ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                <button class="dropdown-item">Сертификат 1</button>
+                <button class="dropdown-item">Сертификат 2</button>
+              </div>
+            </div>
+            <button type="button" class="btn btn-danger">Вход</button>
+          </div>
+        </ng-template>
+      </ngb-tab>
+    </ngb-tabset>
+
+  </div>
+  <div class="modal-window__footer">
+    <ul class="modal-footer__items">
+      <li class="modal-footer__item"><a href="#">Забыли пароль?</a></li>
+      <li class="modal-footer__item"><a href="#">Регистрация</a></li>
+    </ul>
+  </div>
+</ng-template>
+

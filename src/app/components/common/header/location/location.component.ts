@@ -31,7 +31,6 @@ export class LocationComponent implements OnInit {
     this.userCityName = this.locationService.getSavedLocation();
     if (this.userCityName === null){
       this.locationService.getUserLocation().subscribe(res => {
-        debugger;
         this.userCityName = res;
         this.ref.detectChanges();
         //this.locationTooltip.open();
