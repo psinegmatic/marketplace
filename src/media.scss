@@ -49,12 +49,13 @@
       width: 35%;
       .form-group__nav-button {
         border: 2px solid $primary;
-        line-height: 26px;
+        line-height: 28px;
       }
     }
     .form-group__field {
       width: 65%;
       padding: 0;
+      padding-left: 2%;
       margin-bottom: 1%;
       border: 2px solid $primary;
     }

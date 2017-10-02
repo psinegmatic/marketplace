@@ -1,16 +1,30 @@
 <header class="main-header">
   <div class="container">
     <div class="row">
-      <div class="col-sm-10 col-md-5">
+      <div class="col-sm-10 col-md-3  d-flex align-items-end">
         <a class="company-logo" href="#">
-          <img src="/assets/images/company-logo.png" alt=""><h2 class="company-logo__title">FINDERS<span>маркетплейс для вашего бизнеса</span></h2>
+         <div class="company-logo__wrapper">
+           <img src="/assets/images/company-logo.png" alt="">
+         </div>
+          <h2 class="company-logo__title">FINDERS
+            <span class="company-logo__subtitle">маркетплейс для вашего бизнеса</span>
+          </h2>
+
         </a>
       </div>
-      <div class="col-sm-12 col-md-7 col-lg-6 col-xl-5 ml-md-auto">
-        <app-info-block></app-info-block>
+      <div class="col-sm-12 col-md-9 ml-md-auto d-flex align-items-end flex-wrap">
+        <div class="info-block__wrapper">
+          <app-info-block></app-info-block>
+        </div>
+        <div class="search-panel__wrapper">
+          <app-search-panel></app-search-panel>
+        </div>
      </div>
     </div>
-    <app-search-panel></app-search-panel>
-    <app-navbar></app-navbar>
+    <div class="row">
+      <div class="col-sm-12">
+        <app-navbar></app-navbar>
+      </div>
+    </div>
   </div>
 </header>
