@@ -1,28 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
-import {Jsonp} from '@angular/http';
-import { NavigationItem } from '../models/navigation-item';
 
 @Injectable()
 export class CommonService {
-  kladrAPIUrl: string = "http://kladr-api.ru/api.php?";
-  constructor(private jsonp: Jsonp) {
 
-  }
+  constructor() {  }
 
-  getKladrCitiesList(query) {
-    this.jsonp.get(this.kladrAPIUrl + "query=" + query + "&contentType=city&limit=5").map(res => {
-      return res.json().results.map(item => {
-        console.log(item);
-      });
-    });
-
-    return true;
-  }
-
-
-  /*-----------------------------------------*/
   navigationItems: any[] = [
     {
       id: 1,
