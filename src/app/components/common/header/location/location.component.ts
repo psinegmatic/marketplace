@@ -1,7 +1,6 @@
-import { Component, OnInit, ViewChild  } from '@angular/core';
+import { Component, OnInit, ViewChild, NgZone  } from '@angular/core';
 import {LocationService} from "../../../../services/location.service";
-import {ChangeDetectorRef} from '@angular/core';
-import {NgbTooltipConfig} from '@ng-bootstrap/ng-bootstrap';
+import {NgbTooltip, NgbModal, NgbTooltipConfig} from '@ng-bootstrap/ng-bootstrap';
 
 declare var ymaps: any;
 declare var $: any;
@@ -14,38 +13,47 @@ declare var $: any;
   providers: [NgbTooltipConfig]
 })
 export class LocationComponent implements OnInit {
-  userCityName?: string = 'Москва';
+  userLocation?: string = 'Москва';
   kladrCity: string;
   kladrCityList: any[];
   private _timeout: any = null;
 
   @ViewChild("locationTooltip")
-  locationTooltip: HTMLElement;
+  locationTooltip: NgbTooltip;
+  @ViewChild("selectLocationWindow")
+  selectLocationWindow: NgbModal;
 
-  constructor(public locationService: LocationService, private ref:ChangeDetectorRef, config: NgbTooltipConfig) {
+  constructor(public locationService: LocationService, config: NgbTooltipConfig, private _ngZone: NgZone, private modalService: NgbModal) {
     config.placement = 'bottom';
     config.triggers = 'click';
   }
 
   ngOnInit() {
-    this.userCityName = this.locationService.getSavedLocation();
-    if (this.userCityName === null){
+    //localStorage.removeItem('userLocation');
+    this.userLocation = this.locationService.getSavedLocation();
+    if (this.userLocation === null){
       this.locationService.getUserLocation().subscribe(res => {
-        debugger;
-        this.userCityName = res;
-        this.ref.detectChanges();
-        //this.locationTooltip.open();
+        this.userLocation = res;
+        let self = this;
+        this._ngZone.run(()=> {
+          this.locationTooltip.open();
+        });
       });
     }
-
   }
 
-  ngAfterViewInit() {
-
+  confirmUserLocation() {
+    this.locationService.setUserLocation(this.userLocation);
+    this.locationTooltip.close();
   }
-
-  getUserLocationFromYandex() {
-
+  showSelectUserLocationWindow(modalWindow){
+    this.locationTooltip.close();
+    this.modalService.open(modalWindow);
+  }
+  searchUserLocation(queryString: string) {
+    this.locationService.searchLocation(queryString).subscribe(res => {
+      console.log(res);
+    });
   }
 
   getCity_Event(){
@@ -60,10 +68,14 @@ export class LocationComponent implements OnInit {
   }
 
   selectCity(city){
-    this.userCityName = city.name;
+    this.userLocation = city.name;
     this.kladrCityList = [];
     this.kladrCity = '';
     $("#modal-location").modal('hide');
+  }
+
+  closePopup(popup){
+    popup.close();
   }
 
   confirmCity(){

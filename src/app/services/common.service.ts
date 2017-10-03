@@ -96,7 +96,7 @@ export class CommonService {
     },
     {
       id: 3,
-      name: 'Батовая техника',
+      name: 'Бытовая техника',
       url: '3',
       visible: true,
       childList: [

@@ -25,6 +25,12 @@ export class LocationService {
     return userLocation;
   }
 
+  setUserLocation(location: string) {
+    localStorage.setItem('userLocation', location);
+  }
+
+
+
   getKladrCitiesList(query): Observable<any> {
     return this.jsonp.get(this.kladrAPIUrl + "query=" + query + "&contentType=city&limit=5&callback=JSONP_CALLBACK")
       .map(function (res) {
@@ -50,6 +56,23 @@ export class LocationService {
       })
     });
 
+    return this.geocode;
+  }
+
+  searchLocation(queryString: string){
+    this.geocode = new Observable(observer => {
+      ymaps.geocode(queryString).then(
+        function (res) {
+          console.log(res.geoObjects.get(0).properties.get('metaDataProperty').getAll());
+          observer.next(res);
+          observer.complete();
+        },
+        function (err) {
+          console.log(err);
+        }
+      );
+
+    });
     return this.geocode;
   }
 

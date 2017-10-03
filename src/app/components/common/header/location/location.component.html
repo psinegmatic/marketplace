@@ -1,34 +1,64 @@
 <a href="#" class="location-menu__toggle" [ngbTooltip]="locationTooltipTemplate" #locationTooltip="ngbTooltip" >
-  <i class="fa fa-location-arrow" aria-hidden="true"></i> {{userCityName}}
+  <i class="fa fa-location-arrow" aria-hidden="true"></i> {{userLocation}}
 </a>
 
 <!-- MODAL SELECT CITY-->
-<div class="modal  location-menu" id="modal-location">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <h2 class="modal-title">Выберите местоположение</h2>
-      <form class="form">
-        <input type="text" class="form__input" placeholder="Введите ваш город" name="kladrCity" [(ngModel)]="kladrCity" (keypress)="getCity_Event()">
-        <ul>
-          <li *ngFor="let city of kladrCityList" (click)="selectCity(city)"><a class="location-menu__link  drop-menu__item" href="#">{{city.name}}</a></li>
-        </ul>
-        <!--<div class="form__group">-->
-          <!--<label>-->
-            <!--<input class="checkbox" type="checkbox" name="checkbox-test">-->
-            <!--<span class="checkbox-custom"></span>-->
-            <!--<span class="label">Определять регион автоматически</span>-->
-          <!--</label>-->
-        <!--</div>-->
-        <button class="modal-btn" data-dismiss="modal">Продолжить</button>
-      </form>
-    </div>
+<ng-template #selectLocationWindow let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Выберите местоположение</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
   </div>
-</div>
+  <div class="modal-body">
+    <form class="form">
+      <input type="text" class="form__input" placeholder="Введите ваш город" name="userLocation" #userLocationInput (keypress)="searchUserLocation(userLocationInput.value)">
+      <ul>
+        <li *ngFor="let city of kladrCityList" ><a class="location-menu__link  drop-menu__item" href="#">{{city.name}}</a></li>
+      </ul>
+      <!--<div class="form__group">-->
+      <!--<label>-->
+      <!--<input class="checkbox" type="checkbox" name="checkbox-test">-->
+      <!--<span class="checkbox-custom"></span>-->
+      <!--<span class="label">Определять регион автоматически</span>-->
+      <!--</label>-->
+      <!--</div>-->
+
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-warning" data-dismiss="modal" (click)="selectCity(userLocationInput.value)">Продолжить</button>
+    <button type="button" class="btn btn-outline-dark" (click)="closePopup(selectLocationWindow)">Отмена</button>
+  </div>
+</ng-template>
+
+
+<!--<div class="modal  location-menu" id="modal-location">-->
+  <!--<div class="modal-dialog">-->
+    <!--<div class="modal-content">-->
+      <!--<h2 class="modal-title">Выберите местоположение</h2>-->
+      <!--<form class="form">-->
+        <!--<input type="text" class="form__input" placeholder="Введите ваш город" name="userLocation" #userLocationInput (keypress)="searchUserLocation(userLocationInput.value)">-->
+        <!--<ul>-->
+          <!--<li *ngFor="let city of kladrCityList" (click)="selectCity(city)"><a class="location-menu__link  drop-menu__item" href="#">{{city.name}}</a></li>-->
+        <!--</ul>-->
+        <!--&lt;!&ndash;<div class="form__group">&ndash;&gt;-->
+          <!--&lt;!&ndash;<label>&ndash;&gt;-->
+            <!--&lt;!&ndash;<input class="checkbox" type="checkbox" name="checkbox-test">&ndash;&gt;-->
+            <!--&lt;!&ndash;<span class="checkbox-custom"></span>&ndash;&gt;-->
+            <!--&lt;!&ndash;<span class="label">Определять регион автоматически</span>&ndash;&gt;-->
+          <!--&lt;!&ndash;</label>&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--<button class="modal-btn" data-dismiss="modal">Продолжить</button>-->
+      <!--</form>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
 
 <!-- MODAL CONFIRM CITY -->
 <ng-template #locationTooltipTemplate let-greeting="greeting">
   <p>Ваш город</p>
-  <h5>{{userCityName}}</h5>
-  <button class="btn btn-danger" type="button">Да</button>
-  <button class="btn btn-light" type="button">Нет, выбрать другой</button>
+  <h5>{{userLocation}}</h5>
+  <button class="btn btn-danger" type="button" (click)="confirmUserLocation()">Да</button>
+  <button class="btn btn-light" type="button" (click)="showSelectUserLocationWindow(selectLocationWindow)">Нет, выбрать другой</button>
 </ng-template>
