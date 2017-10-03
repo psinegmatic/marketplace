@@ -2,6 +2,7 @@
 .radio {
   display: none;
 }
+
 .checkbox-custom {
   width: 20px;
   height: 20px;
@@ -9,11 +10,13 @@
   border-radius: 3px;
   position: relative;
 }
+
 .checkbox-custom,
 .label {
   display: inline-block;
   vertical-align: middle;
 }
+
 .checkbox:checked + .checkbox-custom::before {
   content: "";
   display: block;
@@ -28,12 +31,12 @@
 
 .form {
   width: 100%;
-  padding: 5% 0 0 0;
+  padding: 5% 0;
 }
 
 .form__input {
   padding: 1% 2%;
-  border: 2px solid #747474;
+  border: 1px solid #dcdcdc;
   outline: none;
   line-height: 1.5rem;
   &:focus {
@@ -60,7 +63,7 @@
   background-image: linear-gradient(to bottom,#e85538 0,#e4003a 100%);
   border: 1px solid #e85538;
   color: #ffffff;
-  line-height: 1.5 rem;
+  line-height: 1.5rem;
   text-transform: uppercase;
   outline: none;
   &--register {
@@ -68,3 +71,4 @@
     border: 1px solid #38cbe8;
   }
 }
+
