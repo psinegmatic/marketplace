@@ -1,28 +1,10 @@
-@import "forms";
+@import "variables";
+@import "mixins";
+@import "base";
 
-$default-font: "roboto-example", sans-serif;
-$accent: orange;
-$primary: #DE1F31;
-$secondary: #F8F8F8;
-
-ul {
-  margin-bottom: 0;
-}
-
-li {
-  text-decoration: none;
-  list-style: none;
-}
-
-img {
-  width: 100%;
-  height: auto;
-}
-
-section {
-  padding: 3rem 0;
-  background-color: #F8F8F8;
-}
+@import "components/buttons";
+@import "components/form";
+@import "components/modal-window";
 
 .hidden {
   display: none !important;
@@ -42,9 +24,7 @@ section {
 .main-header {
   margin-bottom: 10px;
   border-bottom: 1px solid #dddddd;
-  -webkit-box-shadow: 0px 6px 49px -11px rgba(204,204,204,1);
-  -moz-box-shadow: 0px 6px 49px -11px rgba(204,204,204,1);
-  box-shadow: 0px 6px 49px -11px rgba(204,204,204,1);
+  box-shadow: 0 6px 49px -11px rgba(204,204,204,1);
 }
 
 .company-logo {
@@ -123,7 +103,7 @@ section {
   background-image: linear-gradient(to bottom,#e85538 0,#e4003a 100%);
   border: 1px solid #e85538;
   color: #ffffff;
-  line-height: 1.5 rem;
+  line-height: 1.5rem;
   text-transform: uppercase;
   outline: none;
 }
@@ -536,4 +516,20 @@ $l-max: 80;
   }
 }
 
-@import "media";
+.main-header .tooltip.show {
+  opacity: 1;
+  .tooltip-inner {
+    max-width: 250px;
+    background-color: #fff;
+    color: #000000;
+    border: 2px solid #000000;
+    p {
+      margin-bottom: 0;
+    }
+    h5 {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+@import "media"; //Всегда в конце

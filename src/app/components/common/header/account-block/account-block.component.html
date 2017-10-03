@@ -6,10 +6,7 @@
 
 <ng-template #content let-c="close" let-d="dismiss">
   <div class="modal-window__header">
-    <h4 class="modal-window__title">Вход</h4>
-    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
-      <span aria-hidden="true">&times;</span>
-    </button>
+    <h4 class="modal-window__title">Вход <i class="fa fa-times" aria-hidden="true"  aria-label="Close" (click)="d('Cross click')"></i></h4>
   </div>
   <div class="modal-window__content">
     <ngb-tabset>
@@ -39,7 +36,6 @@
         </ng-template>
       </ngb-tab>
     </ngb-tabset>
-
   </div>
   <div class="modal-window__footer">
     <ul class="modal-footer__items">
