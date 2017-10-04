@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "marketplace"
+    "name": "lk.marketplace"
   },
   "apps": [
     {
@@ -62,6 +62,9 @@
   "defaults": {
     "styleExt": "scss",
     "component": {
+    },
+    "serve": {
+      "port": 4201
     }
   }
 }
