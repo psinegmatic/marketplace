@@ -1,0 +1,48 @@
+.account-modal .modal-dialog {
+  max-width: 365px; }
+.account-modal .form {
+  padding: 4% 7%;
+  text-align: center; }
+.account-modal .form__input {
+  width: 100%; }
+
+.modal-window__header {
+  padding: 4% 7%; }
+
+.modal-window__content {
+  border-bottom: 1px solid #dcdcdc; }
+
+.modal-window__footer {
+  padding: 4% 7%; }
+
+.modal-footer__items {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0; }
+
+.modal-footer__item a {
+  color: #0094cc; }
+
+.nav-tabs {
+  border-bottom: 1px solid #dcdcdc; }
+  .nav-tabs .nav-item .nav-link {
+    color: #000000;
+    border: none; }
+  .nav-tabs .nav-item .nav-link.active {
+    font-weight: bold;
+    color: #DE1F31;
+    border-bottom: 3px solid #DE1F31; }
+
+.sertificates {
+  padding: 4% 7%;
+  text-align: center; }
+  .sertificates .sertificates__drop {
+    display: block;
+    padding-left: 5%;
+    text-align: left; }
+  .sertificates .sertificates__menu {
+    width: 86%; }
+
+/*# sourceMappingURL=account-block.component.css.map */

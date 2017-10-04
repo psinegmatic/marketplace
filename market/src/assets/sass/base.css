@@ -1,0 +1,16 @@
+ul, li {
+  margin-bottom: 0; }
+
+li {
+  text-decoration: none;
+  list-style: none; }
+
+img {
+  width: 100%;
+  height: auto; }
+
+section {
+  padding: 3rem 0;
+  background-color: #F8F8F8; }
+
+/*# sourceMappingURL=base.css.map */

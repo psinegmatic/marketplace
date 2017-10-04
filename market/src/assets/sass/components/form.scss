@@ -1,0 +1,74 @@
+.checkbox,
+.radio {
+  display: none;
+}
+
+.checkbox-custom {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #7f7f7f;
+  border-radius: 3px;
+  position: relative;
+}
+
+.checkbox-custom,
+.label {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.checkbox:checked + .checkbox-custom::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+  left: 2px;
+  background: #e85538;
+  border-radius: 2px;
+}
+
+.form {
+  width: 100%;
+  padding: 5% 0;
+}
+
+.form__input {
+  padding: 1% 2%;
+  border: 1px solid #dcdcdc;
+  outline: none;
+  line-height: 1.5rem;
+  &:focus {
+    border: 2px solid #e85538;
+  }
+}
+
+.form__input {
+  width: 95%;
+  margin: 0 auto;
+  margin-bottom: 5%;
+}
+
+.form__group {
+  margin-bottom: 5%;
+  input {
+    margin-right: 2%;
+  }
+}
+
+.form-btn {
+  width: 100%;
+  padding: 1% 2%;
+  background-image: linear-gradient(to bottom,#e85538 0,#e4003a 100%);
+  border: 1px solid #e85538;
+  color: #ffffff;
+  line-height: 1.5rem;
+  text-transform: uppercase;
+  outline: none;
+  &--register {
+    background-image: linear-gradient(to bottom,#38cbe8 0,#06c0e5 100%);
+    border: 1px solid #38cbe8;
+  }
+}
+
