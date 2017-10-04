@@ -1,3 +1,41 @@
-<p>
-  signin works!
-</p>
+<div class="login">
+  <div class="container">
+    <div class="row  justify-content-md-center">
+      <div class="col-md-8">
+        <h1 class="company-logo__title">Логотип</h1>
+      </div>
+    </div>
+    <div class="row  justify-content-md-center">
+      <div class="col-md-8">
+        <h1>Форма входа</h1>
+      </div>
+    </div>
+    <div class="row  justify-content-md-center">
+      <div class="col-md-8 d-flex justify-content-center">
+        <form class="form">
+          <div class="form__fieldset  form__fieldset--secondary">
+            <h4 class="form__fieldset-title">Логин</h4>
+            <input type="email" class="form__input" placeholder="xx@yyy.zz">
+          </div>
+          <div class="form__fieldset  form__fieldset--secondary">
+            <h4 class="form__fieldset-title">Пароль</h4>
+            <input type="password" class="form__input" placeholder="Введите ваш пароль">
+            <a href="#" class="password-notification">Забыли пароль?</a>
+          </div>
+          <div class="form__fieldset">
+            <label class="label">
+              <input type="checkbox" class="checkbox">
+              <span class="checkbox-custom"></span>
+              <span class="label__text">Запомнить</span>
+            </label>
+          </div>
+          <div class="btn-group">
+            <button type="button" class="btn btn-danger btn-lg">Вход по эл. ключу</button>
+            <button type="button" class="btn btn-success btn-lg">Есть профиль?</button>
+            <button type="button" class="btn btn-secondary btn-lg" routerLink="">Вернуться на портал</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

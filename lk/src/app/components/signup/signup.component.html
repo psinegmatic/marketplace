@@ -1,3 +1,65 @@
-<p>
-  signup works!
-</p>
+<div class="registration">
+  <div class="container">
+    <div class="row  justify-content-md-center">
+      <div class="col-md-8">
+        <h1 class="company-logo__title">Логотип</h1>
+      </div>
+    </div>
+    <div class="row  justify-content-md-center">
+      <div class="col-md-8">
+        <h1>Форма регистрации физлица</h1>
+      </div>
+    </div>
+    <div class="row  justify-content-md-center">
+      <div class="col-md-8 d-flex justify-content-center">
+        <form class="form">
+          <div class="form__fieldset  form__fieldset--main">
+            <h4 class="form__fieldset-title">Фамилия</h4>
+            <input type="text" class="form__input">
+          </div>
+          <div class="form__fieldset  form__fieldset--main">
+            <h4 class="form__fieldset-title">Имя</h4>
+            <input type="text" class="form__input">
+          </div>
+          <div class="form__fieldset  form__fieldset--main">
+            <h4 class="form__fieldset-title">Отчество</h4>
+            <input type="text" class="form__input">
+          </div>
+          <div class="form__fieldset  form__fieldset--secondary">
+            <h4 class="form__fieldset-title">Адрес эл. почты</h4>
+            <input type="email" class="form__input" placeholder="xx@yyy.zz">
+          </div>
+          <div class="form__fieldset  form__fieldset--secondary">
+            <h4 class="form__fieldset-title">Контактный телефон (моб)</h4>
+            <input type="number" class="form__input" placeholder="+7 (XXX) XXX-XX-XX">
+          </div>
+          <div class="form__fieldset  form__fieldset--secondary">
+            <h4 class="form__fieldset-title">Пароль</h4>
+            <input type="password" class="form__input" placeholder="Введите ваш пароль">
+          </div>
+          <div class="form__fieldset  form__fieldset--secondary">
+            <h4 class="form__fieldset-title">Повтор пароля</h4>
+            <input type="password" class="form__input" placeholder="Повторите ваш пароль">
+          </div>
+          <div class="form__fieldset">
+            <label class="label">
+              <input type="checkbox" class="checkbox">
+              <span class="checkbox-custom"></span>
+              <span class="label__text">Я соглашаюсь на обработку персональных данных в соответствии с  регламентом работы электронного магазина</span>
+            </label>
+            <label class="label">
+              <input type="checkbox" class="checkbox">
+              <span class="checkbox-custom"></span>
+              <span class="label__text">Получать новости</span>
+            </label>
+          </div>
+          <div class="btn-group">
+            <button type="button" class="btn btn-danger btn-lg">Зарегистрироваться</button>
+            <button type="button" class="btn btn-success btn-lg">Есть профиль?</button>
+            <button type="button" class="btn btn-secondary btn-lg" routerLink="">Вернуться на портал</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

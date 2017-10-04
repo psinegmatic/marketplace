@@ -1,6 +1,15 @@
 .checkbox,
 .radio {
   display: none;
+  margin-right: 1rem;
+}
+
+.label {
+  display: flex;
+
+  .label__text {
+    width: 90%;
+  }
 }
 
 .checkbox-custom {
@@ -11,10 +20,10 @@
   position: relative;
 }
 
-.checkbox-custom,
-.label {
+.checkbox-custom {
   display: inline-block;
   vertical-align: middle;
+  margin-right: 1rem;
 }
 
 .checkbox:checked + .checkbox-custom::before {
@@ -30,24 +39,35 @@
 }
 
 .form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   width: 100%;
-  padding: 5% 0;
+  margin: 0 auto;
 }
 
 .form__input {
-  padding: 1% 2%;
+  padding: 0.5rem 1rem;
   border: 1px solid #dcdcdc;
   outline: none;
   line-height: 1.5rem;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 0.5rem;
   &:focus {
-    border: 2px solid #e85538;
+    border: 1px solid #e85538;
   }
 }
 
-.form__input {
-  width: 95%;
-  margin: 0 auto;
-  margin-bottom: 5%;
+.form__fieldset {
+  margin-bottom: 1.5rem;
+  width: 100%;
+  &--main {
+    width: 30%;
+  }
+  &--secondary {
+    width: 65%;
+  }
 }
 
 .form__group {
@@ -60,15 +80,22 @@
 .form-btn {
   width: 100%;
   padding: 1% 2%;
-  background-image: linear-gradient(to bottom,#e85538 0,#e4003a 100%);
+  background-image: linear-gradient(to bottom, #e85538 0, #e4003a 100%);
   border: 1px solid #e85538;
   color: #ffffff;
   line-height: 1.5rem;
   text-transform: uppercase;
   outline: none;
   &--register {
-    background-image: linear-gradient(to bottom,#38cbe8 0,#06c0e5 100%);
+    background-image: linear-gradient(to bottom, #38cbe8 0, #06c0e5 100%);
     border: 1px solid #38cbe8;
   }
+}
+
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 1rem;
 }
 
